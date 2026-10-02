@@ -5,6 +5,10 @@ node_modules/
 dist/
 build/
 .env
+.env.*
+api_keys.*
+secrets.*
+config.env
 venv/
 env/
 .idea/
