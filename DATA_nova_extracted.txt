@@ -1,0 +1,4370 @@
+Universal CSV Data Analyzer
+
+**Input:** Any `.csv` file
+**Processing:** Automatically detect columns, data types, missing values, relationships, and statistical patterns
+**Output:** Interactive dashboard + charts + insights + downloadable report
+
+### Recommended Features
+
+1. **CSV Upload**
+
+   * Drag & drop / browse CSV
+   * Automatically detect delimiter and encoding
+   * Preview first/last rows
+   * Dataset size: rows × columns
+
+2. **Automatic Data Profiling**
+
+   * Numerical / categorical / datetime column detection
+   * Missing values
+   * Duplicate records
+   * Unique values
+   * Outliers
+   * Min / Max / Mean / Median / Standard deviation
+   * Data quality score
+
+3. **Automatic Visualization**
+   Based on the detected column types:
+
+   * Bar chart
+   * Line chart
+   * Pie / donut chart
+   * Histogram
+   * Box plot
+   * Scatter plot
+   * Heatmap
+   * Correlation matrix
+   * Time-series analysis
+
+4. **AI/Automatic Insights**
+   For example:
+
+   > "Sales increased by 23.4% during the final quarter."
+
+   > "Column `Age` contains 4.2% missing values."
+
+   > "`Income` and `PurchaseAmount` show a strong positive correlation."
+
+   > "`ProductCategory` has the highest number of records."
+
+5. **Natural-Language Analysis**
+
+   User could type:
+
+   > "Show me the top 10 products by revenue."
+
+   > "Which month had the highest sales?"
+
+   > "Find unusual values."
+
+   > "Compare category A and category B."
+
+   The system generates the appropriate analysis/chart automatically.
+
+6. **Dashboard**
+
+   Something like:
+
+```text
+┌──────────────────────────────────────────────────────┐
+│              UNIVERSAL CSV ANALYZER                  │
+├──────────────────────────────────────────────────────┤
+│ Dataset: supermarket_sales.csv                       │
+│ 10,000 Rows • 15 Columns • 98.2% Quality            │
+├────────────┬────────────┬────────────┬───────────────┤
+│ Rows       │ Columns    │ Missing    │ Duplicates    │
+│ 10,000     │ 15         │ 1.8%       │ 24            │
+├────────────┴────────────┴────────────┴───────────────┤
+│                                                      │
+│                 Automatic Insights                   │
+│                                                      │
+├────────────────────────┬─────────────────────────────┤
+│ Distribution            │ Correlation                │
+│        📊              │          🔥                 │
+├────────────────────────┼─────────────────────────────┤
+│ Category Analysis       │ Time Series                │
+│        📈              │          📈                 │
+└────────────────────────┴─────────────────────────────┘
+```
+
+### Suggested Technology Stack
+
+Since you already work with Python and data analysis, I'd structure it as:
+
+**Backend / Analysis**
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Matplotlib
+* Plotly
+
+**Frontend**
+
+* React + Vite
+* Tailwind CSS
+* Plotly / Recharts
+
+**Optional AI layer**
+
+* LLM for natural-language questions and automatic explanations
+
+**Database**
+
+* SQLite, if you want saved datasets, analysis history, and user accounts.
+
+### A particularly useful feature
+
+Make the system **dataset-independent**.
+
+For example:
+
+```text
+sales.csv
+        ↓
+Detect schema
+        ↓
+Analyze data types
+        ↓
+Data cleaning
+        ↓
+Statistical analysis
+        ↓
+Select appropriate charts
+        ↓
+Generate insights
+        ↓
+Interactive dashboard
+        ↓
+Export report
+```
+
+So the same application could accept:
+
+* `sales.csv`
+* `student.csv`
+* `employee.csv`
+* `customer.csv`
+* `hospital.csv`
+* `finance.csv`
+* `weather.csv`
+* `housing.csv`
+* `marketing.csv`
+* basically any structured CSV.
+
+### Project name ideas
+
+* **DataLens AI**
+* **CSVInsight**
+* **DataScope**
+* **InsightFlow**
+* **DataPilot**
+* **CSV Analytics Studio**
+* **Universal Data Analyzer**
+* **InsightX**
+* **DataVision AI**
+
+
+
+
+The user uploads any CSV file, and the system should automatically perform the entire data-analysis pipeline:
+                    CSV FILE
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Dataset Upload  │
+              └────────┬────────┘
+                       ▼
+              ┌─────────────────┐
+              │ Data Inspection │
+              └────────┬────────┘
+                       ▼
+        ┌──────────────────────────────┐
+        │ Automatic Data Understanding │
+        │ • Data types                 │
+        │ • Missing values             │
+        │ • Duplicates                 │
+        │ • Unique values              │
+        │ • Cardinality                │
+        └──────────────┬───────────────┘
+                       ▼
+              ┌─────────────────┐
+              │ Data Cleaning   │
+              └────────┬────────┘
+                       ▼
+              ┌─────────────────┐
+              │ EDA             │
+              │ Statistics      │
+              │ Correlation     │
+              │ Outliers        │
+              └────────┬────────┘
+                       ▼
+              ┌─────────────────┐
+              │ Visualization   │
+              └────────┬────────┘
+                       ▼
+              ┌─────────────────┐
+              │ ML Analysis     │
+              └────────┬────────┘
+                       ▼
+              ┌─────────────────┐
+              │ AI Insights     │
+              └────────┬────────┘
+                       ▼
+             ┌──────────────────┐
+             │ Final Report     │
+             │ PDF / Excel / CSV│
+             └──────────────────┘
+1. Dataset Overview
+Automatically show:
+File name
+File size
+Number of rows
+Number of columns
+Numerical columns
+Categorical columns
+Date/time columns
+Boolean columns
+Missing values
+Duplicate rows
+Memory usage
+Data quality score
+Example:
+
+2. Complete Data Dictionary
+Automatically generate a profile for every column.
+For each column:
+Column: Age
+
+Type: Integer
+Data Type: Numerical
+Unique Values: 62
+Missing: 1.2%
+Mean: 34.62
+Median: 33
+Minimum: 18
+Maximum: 79
+Standard Deviation: 12.43
+Outliers: 18
+For categorical columns:
+Column: Gender
+
+Type: Categorical
+Unique Values: 3
+Missing: 0%
+
+Male       52.4%
+Female     46.8%
+Other       0.8%
+
+3. Data Quality Analysis
+This should be a major section.
+Detect:
+Missing values
+Total missing
+Missing percentage
+Missing by column
+Missing patterns
+Duplicate data
+Total duplicate rows
+Duplicate percentage
+Duplicate columns
+Invalid values
+Examples:
+Age = -5
+Salary = -10000
+Email = "abc"
+Date = "2026/99/42"
+Inconsistent categorical values
+For example:
+Male
+male
+MALE
+M
+The system can identify these as potentially equivalent values.
+
+4. Automatic Data Cleaning
+Give the user a Clean Dataset option.
+Possible operations:
+Remove duplicates
+Fill missing numerical values
+Fill missing categorical values
+Forward fill
+Backward fill
+Remove rows
+Remove columns
+Standardize text
+Convert data types
+Parse dates
+Handle invalid values
+Handle outliers
+Importantly, show:
+Original Dataset
+       ↓
+Cleaning Operations
+       ↓
+Clean Dataset
+And allow the user to see exactly what was changed.
+
+5. Descriptive Statistics
+For numerical columns:
+Count
+Mean
+Median
+Mode
+Minimum
+Maximum
+Range
+Variance
+Standard deviation
+Quartiles
+IQR
+Skewness
+Kurtosis
+Percentiles
+For categorical columns:
+Frequency
+Percentage
+Mode
+Unique count
+Cardinality
+
+6. Distribution Analysis
+Automatically generate suitable visualizations.
+Numerical
+Histogram
+KDE
+Box plot
+Violin plot
+ECDF
+Categorical
+Bar chart
+Frequency chart
+Pareto chart
+Date/time
+Daily trend
+Weekly trend
+Monthly trend
+Yearly trend
+
+7. Outlier Detection
+Automatically detect outliers using multiple methods.
+IQR
+Q1 - 1.5 × IQR
+Q3 + 1.5 × IQR
+Z-score
+|Z| > 3
+Optional advanced methods
+Isolation Forest
+Local Outlier Factor
+Then display:
+Outlier Analysis
+
+Age
+──────
+18 outliers
+
+Salary
+──────
+42 outliers
+
+Purchase Amount
+──────
+27 outliers
+And allow:
+Keep | Remove | Replace | Investigate
+
+8. Correlation Analysis
+Automatically detect relationships between numerical variables.
+Generate:
+Pearson correlation
+Spearman correlation
+Correlation matrix
+Heatmap
+Strong positive relationships
+Strong negative relationships
+Example:
+Strongest relationships
+
+Revenue ↔ Sales       +0.91
+Age ↔ Income          +0.72
+Discount ↔ Profit     -0.64
+Then automatically create scatter plots for important relationships.
+
+9. Categorical Analysis
+For every categorical column:
+Category Distribution
+
+Electronics     34.2%
+Clothing        28.7%
+Food            21.4%
+Furniture       15.7%
+Automatically identify:
+Most common category
+Least common category
+Dominant category
+Rare categories
+Category imbalance
+
+10. Time-Series Analysis
+If the CSV contains a date/time column, automatically activate a Time Analysis section.
+Analyze:
+Daily trends
+Weekly trends
+Monthly trends
+Quarterly trends
+Yearly trends
+Growth rate
+Moving averages
+Seasonality
+Peaks
+Drops
+Trend changes
+For example:
+Sales Trend
+
+Jan ───────────────
+Feb ───────────────────
+Mar ───────────────────────
+Apr ────────────────
+May ─────────────────────────
+
+11. Automatic Relationship Discovery
+This is one of the most valuable features.
+The system shouldn't require the user to manually choose columns.
+It should scan the dataset and find:
+Important Relationships
+
+1. Revenue ↔ Quantity
+   Correlation: 0.87
+
+2. Age ↔ Income
+   Correlation: 0.71
+
+3. Discount ↔ Profit
+   Correlation: -0.64
+Then generate explanations.
+
+12. Group-by Analysis
+Automatically test useful combinations.
+For example:
+Sales by Category
+Sales by Region
+Sales by Gender
+Sales by Month
+Profit by Product
+Revenue by Customer
+The system determines appropriate aggregations:
+SUM
+MEAN
+MEDIAN
+COUNT
+MIN
+MAX
+
+13. Statistical Analysis
+For a full analysis system, add statistical testing.
+Depending on the detected data:
+Numerical vs Numerical
+Pearson correlation
+Spearman correlation
+Regression
+Categorical vs Categorical
+Chi-square test
+Cramér's V
+Numerical vs Categorical
+t-test
+ANOVA
+Mann–Whitney U
+Kruskal–Wallis
+The system should explain results in simple language rather than just showing p-values.
+
+14. Machine Learning Analysis
+This can make your project significantly more advanced.
+The system detects whether the dataset appears suitable for:
+Regression
+Example:
+Target: House Price
+
+Features:
+Area
+Bedrooms
+Location
+Age
+Automatically perform:
+Train/test split
+Feature preprocessing
+Model selection
+Training
+Evaluation
+Possible models:
+Linear Regression
+Random Forest
+Gradient Boosting
+Decision Tree
+Metrics:
+MAE
+MSE
+RMSE
+R²
+
+Classification
+Example:
+Target: Customer Churn
+
+Features:
+Age
+Income
+Usage
+Subscription
+Models:
+Logistic Regression
+Decision Tree
+Random Forest
+Gradient Boosting
+Metrics:
+Accuracy
+Precision
+Recall
+F1-score
+ROC-AUC
+Confusion matrix
+
+Clustering
+If there isn't an obvious target:
+K-Means
+Hierarchical clustering
+DBSCAN
+Automatically identify potential customer/data segments.
+
+15. Feature Importance
+For ML-compatible datasets:
+Feature Importance
+
+Income          █████████████████
+Age             ███████████
+PurchaseFreq    █████████
+Location        █████
+Gender          ██
+This helps explain which variables contribute most to the model.
+
+16. Automatic Insight Engine
+This should be the main differentiating feature.
+Instead of simply showing charts, your application should interpret them.
+Example:
+Key Insight: Revenue is strongly associated with quantity sold, with a correlation of 0.87.
+Data Quality Alert: The Income column contains 4.3% missing values.
+Trend Insight: Monthly revenue shows an increasing trend during the analyzed period.
+Outlier Alert: 2.1% of records in PurchaseAmount are identified as potential outliers using the IQR method.
+Category Insight: Electronics represents the largest category by transaction count.
+The system should distinguish observations from statistical conclusions, so it doesn't claim causation from correlation.
+
+17. Natural Language Data Analyst
+Add a chat interface:
+┌───────────────────────────────────────────┐
+│ Ask anything about your dataset...       │
+│                                           │
+│ "Which product has the highest revenue?"  │
+│                                           │
+│                         [ Analyze ]       │
+└───────────────────────────────────────────┘
+User:
+Which category generates the most revenue?
+System:
+Electronics generated the highest total revenue in the dataset.
+Then automatically display the relevant chart.
+Another:
+Find unusual data.
+System:
+I found potential outliers in 4 numerical columns. The largest concentration is in PurchaseAmount.
+
+18. Automatic Dashboard Generator
+Instead of creating a fixed dashboard, the application should build the dashboard according to the uploaded dataset.
+For example:
+Sales CSV
+Overview
+Sales
+Revenue
+Profit
+Products
+Customers
+Time Analysis
+Geographic Analysis
+Outliers
+Correlations
+Insights
+Student CSV
+Overview
+Students
+Marks
+Attendance
+Subjects
+Performance
+Correlations
+Outliers
+Insights
+Employee CSV
+Overview
+Employees
+Salary
+Departments
+Experience
+Attrition
+Performance
+Correlations
+Insights
+Same application.
+Different dataset.
+Different automatically generated analysis.
+
+19. Export Everything
+Give the user:
+CSV
+Cleaned dataset.
+Excel
+Multiple sheets:
+Analysis.xlsx
+
+├── Dataset
+├── Data Dictionary
+├── Data Quality
+├── Statistics
+├── Correlations
+├── Outliers
+├── Category Analysis
+├── Time Analysis
+└── ML Results
+PDF
+Professional analysis report:
+DATA ANALYSIS REPORT
+
+1. Executive Summary
+2. Dataset Overview
+3. Data Quality
+4. Data Cleaning
+5. Descriptive Statistics
+6. Distribution Analysis
+7. Categorical Analysis
+8. Correlation Analysis
+9. Outlier Analysis
+10. Time-Series Analysis
+11. Statistical Tests
+12. Machine Learning
+13. Key Insights
+14. Recommendations / Next Analysis
+
+20. Project Architecture
+For your implementation, I'd recommend:
+React + Vite + TypeScript
+            │
+            ▼
+      Dashboard UI
+            │
+            ▼
+       Python API
+            │
+     ┌──────┴───────┐
+     ▼              ▼
+  Pandas          NumPy
+     │              │
+     ├──── Scikit-Learn
+     │
+     ├──── SciPy
+     │
+     ├──── Matplotlib
+     │
+     └──── Plotly
+            │
+            ▼
+     Analysis Engine
+            │
+     ┌──────┼─────────┐
+     ▼      ▼         ▼
+   EDA     ML      Insights
+     │      │         │
+     └──────┼─────────┘
+            ▼
+       Report Engine
+            │
+       ┌────┼────┐
+       ▼    ▼    ▼
+      PDF Excel CSV
+The important part
+Upload any CSV → automatically understand → validate → clean → analyze → visualize → statistically evaluate → detect patterns/outliers → optionally model with ML → explain findings → generate a professional report.
+Yes. If you want the entire backend and analysis engine in Python, I would design it as a Python-first Universal CSV Data Analysis Engine. The frontend can later consume the API, but all data processing, statistics, visualization generation, ML, reporting, and insight generation stay in Python.
+Python Backend — Full Functionality
+                    ANY CSV FILE
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │   CSV INGESTION     │
+              │ Encoding / Delimiter│
+              │ Validation / Parser │
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ DATA PROFILER       │
+              │ Schema Detection    │
+              │ Data Types          │
+              │ Missing / Duplicates│
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ DATA CLEANING       │
+              │ Missing Values      │
+              │ Duplicates          │
+              │ Outliers            │
+              │ Type Conversion     │
+              └──────────┬──────────┘
+                         ▼
+        ┌────────────────────────────────┐
+        │       ANALYSIS ENGINE          │
+        ├────────────────────────────────┤
+        │ Descriptive Statistics         │
+        │ Distribution Analysis          │
+        │ Categorical Analysis            │
+        │ Correlation Analysis            │
+        │ Time-Series Analysis            │
+        │ Outlier Detection               │
+        │ Statistical Testing             │
+        │ Regression                      │
+        │ Classification                  │
+        │ Clustering                      │
+        └───────────────┬────────────────┘
+                        ▼
+              ┌─────────────────────┐
+              │ INSIGHT ENGINE      │
+              │ Findings            │
+              │ Trends              │
+              │ Relationships       │
+              │ Anomalies           │
+              └──────────┬──────────┘
+                         ▼
+              ┌─────────────────────┐
+              │ REPORT GENERATOR    │
+              │ JSON / Excel / PDF  │
+              │ Charts / Tables     │
+              └─────────────────────┘
+Recommended Python Stack
+Python 3.12+
+│
+├── pandas
+├── numpy
+├── scipy
+├── scikit-learn
+├── statsmodels
+├── matplotlib
+├── seaborn
+├── plotly
+├── openpyxl
+├── xlsxwriter
+├── reportlab
+├── python-dateutil
+└── FastAPI
+For a web API:
+FastAPI
+├── /upload
+├── /profile
+├── /clean
+├── /statistics
+├── /correlation
+├── /outliers
+├── /categorical
+├── /timeseries
+├── /statistics/tests
+├── /machine-learning
+├── /insights
+├── /report
+└── /export
+
+1. CSV Ingestion Engine
+The backend should not assume that every CSV is perfect.
+It should automatically attempt:
+encoding detection
+delimiter detection
+header detection
+data type inference
+date detection
+Support:
+UTF-8
+UTF-8-SIG
+UTF-16
+Latin-1
+CP1252
+And delimiters:
+,
+;
+\t
+|
+The result should contain:
+{
+    "filename": "sales.csv",
+    "rows": 10000,
+    "columns": 15,
+    "encoding": "utf-8",
+    "delimiter": ","
+}
+
+2. Automatic Schema Detection
+For every column:
+Column
+│
+├── Numerical
+│   ├── Integer
+│   └── Float
+│
+├── Categorical
+│
+├── Boolean
+│
+├── DateTime
+│
+├── Text
+│
+└── ID
+For example:
+{
+    "age": {
+        "type": "numerical",
+        "subtype": "integer"
+    },
+    "gender": {
+        "type": "categorical"
+    },
+    "purchase_date": {
+        "type": "datetime"
+    },
+    "customer_id": {
+        "type": "identifier"
+    }
+}
+
+3. Complete Data Profiling
+For every column, calculate:
+Numerical
+count
+missing
+unique
+mean
+median
+mode
+std
+variance
+min
+max
+range
+Q1
+Q2
+Q3
+IQR
+skewness
+kurtosis
+percentiles
+zero count
+negative count
+outlier count
+Categorical
+unique count
+missing count
+frequency
+percentage
+mode
+rare categories
+Date
+minimum date
+maximum date
+date range
+days
+months
+years
+frequency
+
+4. Data Quality Engine
+Generate a complete quality report.
+Data Quality
+─────────────
+Completeness
+Uniqueness
+Validity
+Consistency
+Accuracy indicators
+Example:
+{
+    "quality_score": 94.6,
+    "missing_percentage": 2.1,
+    "duplicate_percentage": 0.4,
+    "invalid_values": 17,
+    "outlier_percentage": 1.8
+}
+
+5. Automatic Cleaning
+Your backend should support configurable cleaning:
+missing_strategy:
+    mean
+    median
+    mode
+    forward_fill
+    backward_fill
+    constant
+    drop
+
+duplicate_strategy:
+    remove
+    keep
+
+outlier_strategy:
+    keep
+    remove
+    cap
+    winsorize
+And maintain a cleaning log:
+23 rows removed as duplicates
+47 missing values filled using median
+12 invalid dates converted
+8 extreme values capped
+This is important because users need to know what happened to their data.
+
+6. Exploratory Data Analysis
+The Python engine should automatically determine what analysis makes sense.
+Numerical → Numerical
+Correlation
+Scatter plot
+Regression
+Numerical → Categorical
+Group statistics
+Box plot
+ANOVA
+t-test
+Categorical → Categorical
+Contingency table
+Chi-square
+Cramér's V
+Date → Numerical
+Trend
+Moving average
+Growth
+Seasonality
+
+7. Automatic Chart Recommendation
+Instead of hardcoding charts, create a chart-selection engine.
+Example:
+if date_column and numeric_column:
+    generate_line_chart()
+
+elif categorical_column and numeric_column:
+    generate_bar_chart()
+
+elif numeric_column_1 and numeric_column_2:
+    generate_scatter_plot()
+
+elif numeric_column:
+    generate_histogram()
+
+elif categorical_column:
+    generate_frequency_chart()
+It can automatically create a collection of charts appropriate for the dataset.
+
+8. Correlation Engine
+Calculate:
+Pearson
+Spearman
+Kendall
+Generate:
+correlation matrix
+strong positive relationships
+strong negative relationships
+weak relationships
+For example:
+{
+    "strongest_positive": [
+        {
+            "column_a": "quantity",
+            "column_b": "revenue",
+            "correlation": 0.91
+        }
+    ]
+}
+
+9. Outlier Engine
+Use multiple approaches.
+IQR
+Q1 = series.quantile(0.25)
+Q3 = series.quantile(0.75)
+
+IQR = Q3 - Q1
+
+lower = Q1 - 1.5 * IQR
+upper = Q3 + 1.5 * IQR
+Z-score
+scipy.stats.zscore()
+Isolation Forest
+For multidimensional anomaly detection:
+sklearn.ensemble.IsolationForest
+The report can say:
+Potential anomalies detected
+─────────────────────────────
+Salary: 21
+Revenue: 13
+Age: 4
+
+10. Statistical Testing Engine
+Automatically choose tests based on the data.
+Normality
+Shapiro-Wilk
+D'Agostino-Pearson
+Two groups
+Independent t-test
+Paired t-test
+Mann-Whitney U
+Multiple groups
+ANOVA
+Kruskal-Wallis
+Categorical
+Chi-square
+Fisher's exact test
+Relationship
+Pearson
+Spearman
+Return:
+{
+    "test": "Pearson correlation",
+    "statistic": 0.87,
+    "p_value": 0.0001,
+    "interpretation": "Strong positive association"
+}
+
+11. Time-Series Engine
+If a date column exists, automatically detect it.
+Perform:
+daily aggregation
+weekly aggregation
+monthly aggregation
+quarterly aggregation
+yearly aggregation
+Then:
+trend analysis
+growth rate
+moving average
+rolling statistics
+seasonality
+peak detection
+change-point indicators
+Optional forecasting:
+Linear Regression
+ARIMA
+Exponential Smoothing
+
+12. Machine Learning Engine
+I would make ML automatic but optional.
+The system first determines whether ML is appropriate.
+Regression
+Linear Regression
+Ridge
+Lasso
+Decision Tree
+Random Forest
+Gradient Boosting
+Metrics:
+MAE
+MSE
+RMSE
+R²
+MAPE
+Classification
+Logistic Regression
+Decision Tree
+Random Forest
+Gradient Boosting
+Metrics:
+Accuracy
+Precision
+Recall
+F1
+ROC-AUC
+Confusion Matrix
+Clustering
+K-Means
+DBSCAN
+Agglomerative Clustering
+Evaluation:
+Silhouette Score
+Davies-Bouldin Score
+
+13. Automatic Target Detection
+This is a challenging but useful feature.
+If the user doesn't specify a target, inspect columns for candidates:
+target-like names:
+sales
+revenue
+price
+profit
+amount
+score
+target
+class
+label
+status
+churn
+But don't blindly assume one is the target.
+Return:
+Potential target columns
+
+1. Revenue
+2. Profit
+3. Sales
+and allow the API/UI to select one.
+
+14. Feature Engineering
+For ML-compatible data:
+One-hot encoding
+Label encoding
+Standard scaling
+Robust scaling
+Date decomposition
+Missing indicators
+Interaction features
+Date:
+year
+month
+day
+weekday
+quarter
+week
+
+15. Automatic Insight Engine
+This is where the project becomes much more interesting.
+Instead of returning raw Pandas results, create a structured insight system.
+{
+    "type": "trend",
+    "severity": "info",
+    "column": "revenue",
+    "message": "Revenue increased during the analyzed period.",
+    "evidence": {
+        "start": 120000,
+        "end": 165000
+    }
+}
+Categories:
+DATA_QUALITY
+TREND
+CORRELATION
+OUTLIER
+DISTRIBUTION
+CATEGORY
+TIME_SERIES
+STATISTICAL
+ML
+
+16. Natural-Language Query Engine
+Eventually support:
+"Show the highest sales."
+
+"Which category performs best?"
+
+"Find missing data."
+
+"Find unusual values."
+
+"Compare January and February."
+
+"Which variables are correlated?"
+
+"Predict revenue."
+The Python backend interprets the question and maps it to analysis functions.
+
+17. Report Generator
+Generate a professional PDF automatically.
+================================================
+             DATA ANALYSIS REPORT
+================================================
+
+Dataset Information
+
+Data Quality
+
+Data Dictionary
+
+Descriptive Statistics
+
+Missing Values
+
+Duplicate Analysis
+
+Outlier Analysis
+
+Distribution Analysis
+
+Categorical Analysis
+
+Correlation Analysis
+
+Time-Series Analysis
+
+Statistical Tests
+
+Machine Learning
+
+Key Findings
+
+Conclusion
+================================================
+Charts generated with Matplotlib/Plotly can be embedded into the PDF.
+
+18. Excel Export
+Generate:
+analysis.xlsx
+with:
+Sheet 1 → Dataset
+Sheet 2 → Data Dictionary
+Sheet 3 → Data Quality
+Sheet 4 → Descriptive Statistics
+Sheet 5 → Missing Values
+Sheet 6 → Duplicates
+Sheet 7 → Outliers
+Sheet 8 → Correlations
+Sheet 9 → Categorical Analysis
+Sheet 10 → Time Series
+Sheet 11 → Statistical Tests
+Sheet 12 → ML Results
+Sheet 13 → Insights
+
+19. API Architecture
+I would structure the Python project like this:
+universal-data-analyzer/
+│
+├── app/
+│   ├── main.py
+│   │
+│   ├── api/
+│   │   ├── upload.py
+│   │   ├── profiling.py
+│   │   ├── cleaning.py
+│   │   ├── statistics.py
+│   │   ├── visualization.py
+│   │   ├── correlation.py
+│   │   ├── outliers.py
+│   │   ├── timeseries.py
+│   │   ├── machine_learning.py
+│   │   ├── insights.py
+│   │   └── reports.py
+│   │
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── exceptions.py
+│   │   └── logging.py
+│   │
+│   ├── engines/
+│   │   ├── ingestion_engine.py
+│   │   ├── profiling_engine.py
+│   │   ├── cleaning_engine.py
+│   │   ├── eda_engine.py
+│   │   ├── statistics_engine.py
+│   │   ├── correlation_engine.py
+│   │   ├── outlier_engine.py
+│   │   ├── timeseries_engine.py
+│   │   ├── ml_engine.py
+│   │   ├── insight_engine.py
+│   │   └── chart_engine.py
+│   │
+│   ├── reports/
+│   │   ├── pdf_report.py
+│   │   ├── excel_report.py
+│   │   └── chart_export.py
+│   │
+│   ├── models/
+│   │   └── schemas.py
+│   │
+│   └── utils/
+│       ├── file_utils.py
+│       ├── type_detection.py
+│       └── date_utils.py
+│
+├── uploads/
+├── outputs/
+├── tests/
+├── requirements.txt
+└── README.md
+Core API
+Something like:
+POST /api/upload
+
+GET  /api/dataset/{id}/profile
+
+GET  /api/dataset/{id}/quality
+
+POST /api/dataset/{id}/clean
+
+GET  /api/dataset/{id}/statistics
+
+GET  /api/dataset/{id}/distributions
+
+GET  /api/dataset/{id}/correlations
+
+GET  /api/dataset/{id}/outliers
+
+GET  /api/dataset/{id}/categorical
+
+GET  /api/dataset/{id}/timeseries
+
+POST /api/dataset/{id}/statistical-test
+
+POST /api/dataset/{id}/ml
+
+GET  /api/dataset/{id}/insights
+
+POST /api/dataset/{id}/query
+
+GET  /api/dataset/{id}/report/pdf
+
+GET  /api/dataset/{id}/report/excel
+
+GET  /api/dataset/{id}/export/cleaned
+One important design decision
+I would not put everything into one enormous main.py. Even though the backend is 100% Python, separating the analysis engines makes it much easier to maintain and extend.
+The result would essentially be a Python-based automated data scientist:
+CSV → ingestion → profiling → cleaning → EDA → statistics → visualization → correlations → outliers → time series → statistical tests → ML → insights → PDF/Excel report.
+And because the analysis engine is dataset-independent, the same backend can analyze a supermarket dataset today and a student, finance, HR, healthcare, or sales dataset tomorrow.
+Yes — I understand the reference now. You want a complete working application like the DataNova dashboard in your image, but with the entire application built in Python.
+I created the full Python project with:
+CSV upload and automatic ingestion
+Encoding/delimiter detection
+Dataset profiling
+Automatic data-type detection
+Data-quality scoring
+Missing-value analysis
+Duplicate detection
+Data cleaning
+Descriptive statistics
+Distribution analysis
+Correlation analysis
+Categorical analysis
+Time-series analysis
+Outlier detection
+Statistical analysis
+Regression
+Classification
+K-Means clustering
+Feature importance
+Automatic findings
+Local AI-style investigation
+Natural-language dataset questions
+Interactive Plotly charts
+Excel export
+JSON export
+Cleaned CSV export
+PDF report generation
+Streamlit dashboard
+Automated tests
+Sample CSV
+Windows/Linux run scripts
+The dashboard is organized around:
+DataNova
+│
+├── Overview
+├── Findings
+├── Data Quality
+├── EDA & Visualization
+├── Machine Learning
+├── AI Investigation
+└── Reports
+Universal_Data_Analyzer/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── run_windows.bat
+├── run_api_windows.bat
+├── sample_data.csv
+│
+├── app/
+│   ├── dashboard.py
+│   │
+│   ├── api/
+│   │   ├── upload.py
+│   │   ├── dataset.py
+│   │   ├── profiling.py
+│   │   ├── cleaning.py
+│   │   ├── statistics.py
+│   │   ├── visualization.py
+│   │   ├── correlation.py
+│   │   ├── outliers.py
+│   │   ├── categorical.py
+│   │   ├── timeseries.py
+│   │   ├── hypothesis.py
+│   │   ├── machine_learning.py
+│   │   ├── insights.py
+│   │   ├── query.py
+│   │   └── reports.py
+│   │
+│   ├── engines/
+│   │   ├── ingestion_engine.py
+│   │   ├── schema_engine.py
+│   │   ├── profiling_engine.py
+│   │   ├── quality_engine.py
+│   │   ├── cleaning_engine.py
+│   │   ├── eda_engine.py
+│   │   ├── statistics_engine.py
+│   │   ├── distribution_engine.py
+│   │   ├── categorical_engine.py
+│   │   ├── correlation_engine.py
+│   │   ├── outlier_engine.py
+│   │   ├── timeseries_engine.py
+│   │   ├── hypothesis_engine.py
+│   │   ├── ml_engine.py
+│   │   └── insight_engine.py
+│   │
+│   ├── models/
+│   ├── utils/
+│   └── reports/
+│
+└── tests
+
+Absolutely. For this project, I would structure the UI/UX as a complete SaaS-grade data intelligence platform, not just a CSV upload page.
+DataNova — Complete UI/UX Map
+DATANOVA
+│
+├── 01. PUBLIC / ENTRY
+│   ├── Landing Page
+│   ├── Product Overview
+│   ├── Features
+│   └── Upload / Get Started
+│
+├── 02. DATASET WORKSPACE
+│   ├── Dataset Upload
+│   ├── Dataset Processing
+│   ├── Dataset Overview
+│   ├── Dataset Preview
+│   ├── Schema / Data Dictionary
+│   └── Dataset Settings
+│
+├── 03. ANALYSIS
+│   ├── Overview
+│   ├── Findings
+│   ├── Data Quality
+│   ├── EDA & Visualization
+│   │   ├── Statistics
+│   │   ├── Distributions
+│   │   ├── Correlation
+│   │   ├── Categorical Analysis
+│   │   ├── Time Series
+│   │   └── Outliers
+│   ├── Hypothesis Testing
+│   └── Advanced Analysis
+│
+├── 04. MACHINE LEARNING
+│   ├── ML Overview
+│   ├── Regression
+│   ├── Classification
+│   ├── Clustering
+│   ├── Feature Importance
+│   ├── Model Results
+│   └── Model Comparison
+│
+├── 05. AI INVESTIGATION
+│   ├── AI Overview
+│   ├── Ask Dataset
+│   ├── Suggested Questions
+│   ├── Investigation Results
+│   └── Evidence / Explanation
+│
+├── 06. REPORTING
+│   ├── Report Builder
+│   ├── Report Preview
+│   ├── PDF Export
+│   ├── Excel Export
+│   ├── CSV Export
+│   └── JSON Export
+│
+└── 07. SYSTEM
+    ├── Settings
+    ├── Theme
+    ├── API / Backend Status
+    ├── Help
+    └── About DataNova
+
+1. Global Application Layout
+The main application should use a three-level navigation hierarchy.
+┌───────────────────────────────────────────────────────────────┐
+│ DataNova                              Search   Help   Profile │
+├──────────────┬────────────────────────────────────────────────┤
+│              │                                                │
+│  WORKSPACE   │              MAIN CONTENT                      │
+│              │                                                │
+│  Overview    │                                                │
+│  Findings    │                                                │
+│  Quality     │                                                │
+│  EDA         │                                                │
+│  ML          │                                                │
+│  AI          │                                                │
+│  Reports     │                                                │
+│              │                                                │
+│              │                                                │
+│  ─────────   │                                                │
+│  Dataset     │                                                │
+│  Settings    │                                                │
+│              │                                                │
+├──────────────┴────────────────────────────────────────────────┤
+│ ● System operational                           v1.0.0         │
+└───────────────────────────────────────────────────────────────┘
+Sidebar
+◈ DataNova
+  DATA INTELLIGENCE
+
+WORKSPACE
+
+▣ Overview
+✦ Findings
+◉ Data Quality
+◈ EDA & Visualization
+◆ Machine Learning
+⌕ AI Investigation
+▤ Reports
+
+────────────────
+
+DATASET
+
+▣ current_dataset.csv
+↻ Replace Dataset
+
+────────────────
+
+SYSTEM
+
+⚙ Settings
+? Help
+
+● System operational
+
+2. Landing Page
+Before uploading anything:
+                         ◈ DataNova
+
+              AUTOMATED DATA INVESTIGATION
+
+              Turn raw data into
+                    intelligence.
+
+        Upload a dataset and let DataNova profile,
+        clean, analyze, investigate and explain
+        the important patterns automatically.
+
+
+ ┌───────────────────────────────────────────────────────┐
+ │                                                       │
+ │       ↑                                               │
+ │      Upload CSV                                       │
+ │                                                       │
+ │      Drop your dataset here                           │
+ │      or browse from your computer                     │
+ │                                                       │
+ │                         [ Browse Files ]              │
+ │                                                       │
+ │      CSV • UTF-8 • Automatic schema detection         │
+ │                                                       │
+ └───────────────────────────────────────────────────────┘
+
+
+       01 Profile → 02 Clean → 03 Analyze
+                         ↓
+                04 Investigate → 05 Explain
+UX states
+Empty
+Upload CSV
+Uploading
+Uploading dataset...
+██████████████████░░░ 82%
+
+12.4 MB / 15.1 MB
+Processing
+Analyzing your dataset
+
+✓ File uploaded
+✓ Encoding detected
+✓ Schema detected
+● Profiling columns
+○ Detecting anomalies
+○ Generating findings
+Error
+Unable to analyze dataset
+
+The uploaded file could not be parsed.
+
+[ Try Again ]   [ View Details ]
+
+3. Dataset Processing Page
+This should feel like an intelligent pipeline rather than a loading spinner.
+DATASET INTELLIGENCE
+
+Analyzing:
+sales_2026.csv
+
+┌──────────────────────────────────────────────┐
+│                                              │
+│              ◉                              │
+│         Processing Dataset                   │
+│                                              │
+│        64,382 rows detected                  │
+│        28 columns detected                   │
+│                                              │
+└──────────────────────────────────────────────┘
+
+PROCESSING PIPELINE
+
+✓ Ingestion
+✓ Encoding Detection
+✓ Schema Detection
+✓ Data Profiling
+● Data Quality
+○ Statistical Analysis
+○ Pattern Detection
+○ Insight Generation
+At completion:
+Analysis complete
+
+64,382 rows
+28 columns
+97.4% quality score
+
+[ Explore Dataset → ]
+
+4. Overview Page
+This is the main dashboard.
+Header
+DATASET / DATASET INTELLIGENCE
+
+sales_2026.csv
+
+[ Replace Dataset ]   ● LIVE
+Hero
+AUTOMATED DATA INVESTIGATOR
+
+Turn raw data into intelligence.
+
+Your dataset has been automatically profiled,
+cleaned and analyzed.
+KPI cards
+┌────────────┐ ┌────────────┐ ┌────────────┐
+│ ROWS       │ │ COLUMNS    │ │ MISSING    │
+│ 64,382     │ │ 28         │ │ 2.31%      │
+│ records    │ │ 14 numeric │ │ 1,231 cells│
+└────────────┘ └────────────┘ └────────────┘
+
+┌────────────┐ ┌────────────┐
+│ DUPLICATES │ │ QUALITY    │
+│ 183        │ │ 97.4%      │
+│ 0.28%      │ │ Excellent  │
+└────────────┘ └────────────┘
+Automatic findings
+AUTOMATIC DISCOVERY
+
+┌─────────────────────────────────────────┐
+│ ✦ Strong correlation detected           │
+│                                         │
+│ Revenue ↔ Quantity                      │
+│ Correlation: 0.82                       │
+│                                         │
+│ Evidence →                              │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│ ! Potential outliers                    │
+│                                         │
+│ Revenue contains 427 IQR outliers.      │
+│                                         │
+│ Investigate →                           │
+└─────────────────────────────────────────┘
+Dataset preview
+DATASET PREVIEW
+
+Search columns...
+Filter ▾
+
+┌────────┬──────┬──────────┬─────────┬─────────┐
+│ ID     │ Age  │ Category │ Revenue │ Date    │
+├────────┼──────┼──────────┼─────────┼─────────┤
+│ 001    │ 24   │ Food     │ 450     │ Jan 01  │
+│ 002    │ 32   │ Tech     │ 820     │ Jan 02  │
+│ ...                                            │
+└───────────────────────────────────────────────┘
+
+5. Findings Page
+Purpose: tell the user what the system discovered automatically.
+AUTOMATIC DISCOVERY
+
+Findings
+
+Evidence-based observations generated
+from your dataset.
+Filters:
+[ All ] [ Data Quality ] [ Correlation ]
+[ Outliers ] [ Trends ] [ Categories ]
+Cards:
+┌────────────────────────────────────────────┐
+│ ✦ CORRELATION                              │
+│                                            │
+│ Strong relationship detected              │
+│                                            │
+│ Revenue and Quantity                      │
+│ r = 0.824                                 │
+│                                            │
+│ Association does not imply causation.     │
+│                                            │
+│ [ Investigate ]                            │
+└────────────────────────────────────────────┘
+Each finding should have:
+Finding type
+Title
+Description
+Evidence
+Confidence/context
+Related columns
+Visualization
+Investigate button
+
+6. Data Quality Page
+This should be a dedicated data-health workspace.
+DATA HEALTH
+
+Data Quality
+
+Understand how complete, consistent
+and reliable your dataset is.
+Quality score
+                 97.4%
+
+             DATA QUALITY
+
+       ███████████████████░
+Quality dimensions
+Completeness       96.8%
+Uniqueness         99.7%
+Consistency        98.2%
+Validity           97.1%
+Problems
+ISSUES DETECTED
+
+⚠ Missing Values
+  1,231 cells
+
+⚠ Duplicate Records
+  183 rows
+
+⚠ Potential Outliers
+  427 values
+
+✓ Schema consistency
+✓ Column names
+✓ Data types
+
+7. Data Cleaning Page
+Inside Data Quality:
+CLEAN DATASET
+
+Choose cleaning operations
+
+MISSING VALUES
+
+○ Do nothing
+○ Drop affected rows
+● Median / Mode
+○ Forward fill
+○ Backward fill
+
+DUPLICATES
+
+○ Keep
+● Remove duplicates
+
+OUTLIERS
+
+○ Keep
+● IQR clipping
+○ Z-score filtering
+
+
+          [ Preview Changes ]
+
+          [ Apply Cleaning ]
+After preview:
+BEFORE → AFTER
+
+Rows
+64,382 → 64,199
+
+Missing
+1,231 → 0
+
+Duplicates
+183 → 0
+
+Outliers
+427 → 82
+Then:
+[ Apply Changes ]
+
+This action will modify the working dataset.
+
+[ Cancel ] [ Confirm ]
+
+8. EDA & Visualization
+This should be a major section.
+EXPLORATORY ANALYSIS
+
+EDA & Visualization
+
+Explore distributions, relationships,
+categories, trends and anomalies.
+Tabs:
+Statistics
+Distribution
+Correlation
+Categorical
+Time Series
+Outliers
+
+9. Statistics Page
+DESCRIPTIVE STATISTICS
+
+Column      Count   Mean   Median   Std   Min   Max
+────────────────────────────────────────────────────
+Revenue     64,382  523.2  490.0    182   10    2400
+Quantity    64,382  4.82   4        2.1   1     20
+Age         63,991  31.8   30       8.2   18    75
+Additional controls:
+[ Descriptive ]
+[ Quantiles ]
+[ Variance ]
+[ Skewness ]
+[ Kurtosis ]
+[ Normality ]
+
+10. Distribution Analysis
+DISTRIBUTION ANALYSIS
+
+Select variable
+
+[ Revenue ▼ ]
+
+┌────────────────────────────────────────────┐
+│                                            │
+│                 ▂▅███▆▃                   │
+│              ▂██████████▅                 │
+│          ▂▆██████████████▃               │
+│      ▂▅████████████████████▂             │
+│                                            │
+└────────────────────────────────────────────┘
+
+Mean        523.2
+Median      490.0
+Std Dev     182.3
+Skewness    1.24
+Kurtosis    2.81
+
+11. Correlation Page
+CORRELATION ANALYSIS
+
+Method
+
+[ Pearson ▼ ]
+
+Correlation Matrix
+
+       Revenue Quantity Age
+Revenue  1.00   0.82   .21
+Quantity .82    1.00   .14
+Age      .21    .14    1.00
+Below:
+STRONGEST RELATIONSHIPS
+
+Revenue ↔ Quantity       0.82
+Age ↔ Revenue             0.21
+Age ↔ Quantity             0.14
+And interactive scatter plot.
+
+12. Categorical Analysis
+CATEGORICAL ANALYSIS
+
+Column
+
+[ Category ▼ ]
+
+Electronics       ███████████████ 38%
+Food              ███████████     27%
+Clothing          ███████         19%
+Furniture         █████            16%
+Information:
+Unique values: 4
+Mode: Electronics
+Mode share: 38.2%
+
+13. Time-Series Analysis
+If a date column is detected:
+TIME SERIES
+
+Date Column
+
+[ Order Date ▼ ]
+
+Value
+
+[ Revenue ▼ ]
+
+Frequency
+
+[ Daily ▼ ]
+
+┌───────────────────────────────────────────┐
+│                    ╱╲                     │
+│              ╱────╯  ╲──────             │
+│        ╱─────╯                ╲           │
+│───────╯                         ╲────     │
+└───────────────────────────────────────────┘
+Metrics:
+Start Date
+01 Jan 2026
+
+End Date
+30 Sep 2026
+
+Growth
++18.4%
+
+Peak
+₹82,421
+
+Peak Date
+18 Aug 2026
+
+14. Outlier Analysis
+OUTLIER DETECTION
+
+Detection Method
+
+[ IQR ▼ ]
+
+Column          Outliers       Percentage
+Revenue         427            0.66%
+Quantity        118            0.18%
+Age             31             0.05%
+Then:
+ANOMALY INVESTIGATION
+
+Revenue
+
+Lower Bound     12.5
+Upper Bound     1,245.8
+
+[ View Records ]
+[ Visualize ]
+[ Clean Outliers ]
+
+15. Hypothesis Testing
+This should be an additional advanced analysis page.
+STATISTICAL TESTING
+
+Test Type
+
+[ Compare Groups ▼ ]
+
+Numerical Variable
+[ Revenue ▼ ]
+
+Grouping Variable
+[ Category ▼ ]
+
+[ Run Test ]
+Result:
+WELCH T-TEST
+
+Group A       Electronics
+Group B       Food
+
+Statistic     4.823
+p-value       0.0003
+
+Sample sizes
+n₁ = 12,321
+n₂ = 10,892
+
+Interpretation:
+The test result provides statistical evidence
+of a difference between the two group means
+at the selected significance threshold.
+Also support:
+Welch t-test
+ANOVA
+Mann-Whitney
+Kruskal-Wallis
+Chi-square
+
+16. Machine Learning — Main Page
+PREDICTIVE ANALYTICS
+
+Machine Learning
+
+Build models directly from the dataset.
+
+┌──────────────────┐
+│ Regression       │
+│ Predict numeric  │
+│ outcomes         │
+│                  │
+│ [ Open → ]       │
+└──────────────────┘
+
+┌──────────────────┐
+│ Classification   │
+│ Predict classes  │
+│                  │
+│ [ Open → ]       │
+└──────────────────┘
+
+┌──────────────────┐
+│ Clustering       │
+│ Discover groups  │
+│                  │
+│ [ Open → ]       │
+└──────────────────┘
+
+17. Regression Page
+REGRESSION
+
+Target Variable
+
+[ Revenue ▼ ]
+
+Features
+
+☑ Age
+☑ Quantity
+☑ Category
+☑ Region
+☐ Customer ID
+
+Test Size
+
+[ 20% ]
+
+Model
+
+[ Random Forest ▼ ]
+
+[ Train Model ]
+After training:
+MODEL PERFORMANCE
+
+R²                 0.87
+MAE                82.41
+RMSE               118.32
+
+────────────────────────
+
+FEATURE IMPORTANCE
+
+Quantity       ███████████████  0.51
+Category       █████████        0.29
+Age            █████            0.12
+Region         ███              0.08
+
+18. Classification Page
+CLASSIFICATION
+
+Target
+[ Customer Segment ▼ ]
+
+Algorithm
+[ Random Forest ▼ ]
+
+Training configuration
+
+Test size: 20%
+Random state: 42
+
+[ Train Model ]
+Results:
+Accuracy       91.4%
+Precision      90.8%
+Recall         89.9%
+F1 Score       90.3%
+Then:
+CONFUSION MATRIX
+
+          Pred A  Pred B  Pred C
+Actual A    421      21      9
+Actual B     19     382     17
+Actual C      7      13     401
+
+19. Clustering Page
+CLUSTERING
+
+Features
+
+☑ Revenue
+☑ Quantity
+☑ Age
+☑ Frequency
+
+Number of clusters
+
+     3
+
+     [────●────────]
+
+Algorithm
+
+K-Means
+
+[ Run Clustering ]
+Results:
+CLUSTER 0
+High-value customers
+
+CLUSTER 1
+Frequent low-value customers
+
+CLUSTER 2
+Occasional customers
+With cluster visualization.
+
+20. Feature Importance Page
+FEATURE IMPORTANCE
+
+             Importance
+
+Revenue      ███████████████████
+Quantity     ███████████████
+Age          ████████
+Category     ██████
+Region       ███
+Allow:
+[ Random Forest ]
+[ Permutation Importance ]
+
+21. AI Investigation
+This should be one of the strongest parts of the application.
+DATASET INTELLIGENCE
+
+AI Investigation
+
+Ask questions about your dataset.
+Search interface
+┌────────────────────────────────────────────────────┐
+│ 🔍 Which variables are most correlated?             │
+│                                           [ Ask ]   │
+└────────────────────────────────────────────────────┘
+Suggested questions:
+Suggested Questions
+
+→ Which variables are most correlated?
+
+→ Which columns contain missing values?
+
+→ What are the largest outliers?
+
+→ What category has the highest revenue?
+
+→ Is there a trend over time?
+
+→ Which variables should I investigate?
+
+→ What are the major findings?
+
+22. AI Answer Page
+INVESTIGATION RESULT
+
+✦
+
+The strongest numerical association detected
+is between Revenue and Quantity.
+
+Correlation:
+0.824
+
+Evidence:
+Pearson correlation calculated using
+64,382 available observations.
+
+Important:
+Correlation describes association and does
+not establish causation.
+
+
+[ View Correlation ] [ Investigate Further ]
+This section should never fabricate an answer. It should use the actual analysis results from the Python backend.
+
+23. Reports Page
+EXPORT & REPORTING
+
+Generate a professional report from
+your complete analysis.
+
+┌───────────────────┐
+│ PDF REPORT        │
+│ Complete analysis │
+│ [ Download PDF ]  │
+└───────────────────┘
+
+┌───────────────────┐
+│ EXCEL             │
+│ Tables & analysis │
+│ [ Download XLSX ] │
+└───────────────────┘
+
+┌───────────────────┐
+│ CSV               │
+│ Processed dataset │
+│ [ Download CSV ]  │
+└───────────────────┘
+
+┌───────────────────┐
+│ JSON              │
+│ Machine-readable  │
+│ [ Download JSON ] │
+└───────────────────┘
+
+24. Report Builder
+For a more professional application, add:
+REPORT BUILDER
+
+Report Name
+[ Sales Analysis Report ]
+
+Sections
+
+☑ Executive Summary
+☑ Dataset Overview
+☑ Data Quality
+☑ Statistics
+☑ EDA
+☑ Correlations
+☑ Outliers
+☑ Machine Learning
+☑ Findings
+☐ Raw Dataset
+
+Charts
+
+☑ Correlation Matrix
+☑ Revenue Distribution
+☑ Category Breakdown
+☑ Time Series
+
+[ Generate Report ]
+
+25. Report Preview
+REPORT PREVIEW
+
+────────────────────────────────
+
+DATANOVA
+
+Sales Dataset Intelligence Report
+
+Generated:
+02 October 2026
+
+────────────────────────────────
+
+EXECUTIVE SUMMARY
+
+...
+
+DATA QUALITY
+
+97.4%
+
+EDA
+
+...
+
+KEY FINDINGS
+
+...
+
+────────────────────────────────
+
+[ Download PDF ]
+[ Download Excel ]
+
+26. Dataset Settings
+DATASET SETTINGS
+
+Dataset
+sales_2026.csv
+
+Rows
+64,382
+
+Columns
+28
+
+Encoding
+UTF-8
+
+Delimiter
+,
+
+────────────────
+
+DATASET ACTIONS
+
+[ Replace Dataset ]
+
+[ Re-run Analysis ]
+
+[ Reset Cleaning ]
+
+[ Delete Workspace ]
+
+27. Global Search
+Top navigation:
+⌕ Search dataset...
+
+Try:
+
+"revenue"
+"missing values"
+"correlation"
+"outliers"
+Search results:
+SEARCH RESULTS
+
+Columns
+Revenue
+
+Findings
+Revenue ↔ Quantity
+
+Charts
+Revenue Distribution
+
+Analysis
+Revenue Outliers
+
+28. Notifications
+Use a notification drawer:
+NOTIFICATIONS
+
+✓ Analysis completed
+  sales_2026.csv analyzed successfully
+
+⚠ Data quality issue
+  1,231 missing cells detected
+
+✦ New finding
+  Strong correlation detected
+
+✓ Report generated
+  PDF report is ready
+
+29. Global Modals
+The application should have reusable modal components.
+Confirm Delete
+Delete Dataset?
+
+This will remove the current workspace.
+
+[ Cancel ] [ Delete Dataset ]
+Replace Dataset
+Replace current dataset?
+
+Your current analysis will be replaced.
+
+[ Cancel ] [ Replace ]
+Export
+Export Analysis
+
+Format
+
+○ PDF
+○ Excel
+○ CSV
+○ JSON
+
+[ Export ]
+Error
+Something went wrong.
+
+Unable to complete this operation.
+
+Error:
+...
+
+[ Retry ] [ Close ]
+
+30. Loading States
+Every major operation should have a proper skeleton.
+┌───────────────────────────────┐
+│ █████████████████             │
+│ ████████                      │
+│                               │
+│ █████████████████████         │
+└───────────────────────────────┘
+For ML:
+TRAINING MODEL
+
+Preparing features       ✓
+Encoding categorical     ✓
+Splitting dataset        ✓
+Training Random Forest   ●
+Evaluating model         ○
+Calculating importance   ○
+
+31. Empty States
+Example:
+No correlation analysis available
+
+At least two numerical variables
+are required.
+
+[ View Schema ]
+Another:
+No datetime column detected
+
+Time-series analysis requires
+a date/time column.
+
+[ Inspect Dataset ]
+
+32. Responsive Mobile UI
+Desktop:
+Sidebar + Main Workspace
+Tablet:
+Collapsed Sidebar
+      ↓
+Icons + labels
+Mobile:
+┌──────────────────────┐
+│ ◈ DataNova      ☰    │
+├──────────────────────┤
+│                      │
+│ Overview             │
+│                      │
+│ ┌──────────────────┐ │
+│ │ Rows             │ │
+│ │ 64,382           │ │
+│ └──────────────────┘ │
+│                      │
+│ ┌──────────────────┐ │
+│ │ Quality          │ │
+│ │ 97.4%            │ │
+│ └──────────────────┘ │
+│                      │
+└──────────────────────┘
+Charts become horizontally scrollable rather than being squeezed.
+
+33. Complete User Journey
+The ideal UX flow is:
+                    LANDING
+                       │
+                       ▼
+                Upload CSV
+                       │
+                       ▼
+              Dataset Processing
+                       │
+              ┌────────┴────────┐
+              ▼                 ▼
+          Successful           Error
+              │                 │
+              ▼                 └──→ Retry
+          OVERVIEW
+              │
+      ┌───────┼────────┬──────────┐
+      ▼       ▼        ▼          ▼
+   Findings Quality    EDA        ML
+      │       │        │          │
+      │       │        │          ├── Regression
+      │       │        │          ├── Classification
+      │       │        │          └── Clustering
+      │       │        │
+      │       │        ├── Statistics
+      │       │        ├── Distribution
+      │       │        ├── Correlation
+      │       │        ├── Categorical
+      │       │        ├── Time Series
+      │       │        └── Outliers
+      │       │
+      │       └── Cleaning
+      │
+      └──────────────┐
+                     ▼
+              AI INVESTIGATION
+                     │
+                     ▼
+               Ask Question
+                     │
+                     ▼
+              Evidence + Answer
+                     │
+                     ▼
+                  REPORTS
+                     │
+          ┌──────────┼─────────┐
+          ▼          ▼         ▼
+         PDF       Excel      JSON
+
+34. Backend ↔ Frontend Mapping
+This is particularly important for your implementation.
+
+35. Recommended Visual Design System
+For the DataNova style shown in your reference, I'd use:
+Colors
+Background       #080B14
+Sidebar          #0A0E19
+Surface          #111625
+Surface 2        #151B2D
+Border           rgba(255,255,255,0.075)
+
+Primary          #8175FF
+Secondary        #4FD1FF
+Success          #65E6A6
+Warning          #FFCA67
+Danger           #FF7186
+
+Text             #F4F6FF
+Secondary Text   #8F99B1
+Muted            #69748D
+Typography
+Headings     Inter 700/800
+Body         Inter 400/500
+Numbers      Inter 700/800
+Labels       Inter 600/700
+Visual language
+Dark SaaS dashboard
+Glass / layered surfaces
+Very subtle borders
+Large typography
+Small uppercase labels
+Soft gradients
+Purple data-intelligence accent
+Minimal rounded cards
+Dense analytical tables
+Interactive charts
+Micro-animations
+The goal should be DataNova / Linear / Vercel / modern analytics SaaS, rather than a generic Bootstrap dashboard.
+
+Final page inventory
+For the full production version, I would therefore make the React application contain roughly 20–25 actual screens/views:
+01  Landing
+02  Upload
+03  Processing
+04  Overview
+05  Findings
+06  Data Quality
+07  Cleaning
+08  Data Dictionary
+09  Statistics
+10  Distribution
+11  Correlation
+12  Categorical Analysis
+13  Time Series
+14  Outlier Analysis
+15  Hypothesis Testing
+16  ML Overview
+17  Regression
+18  Classification
+19  Clustering
+20  Feature Importance
+21  AI Investigation
+22  Investigation Result
+23  Report Builder
+24  Report Preview
+25  Settings
+Yes — a lot more can be added. At this point, I would stop thinking of it as a “CSV analyzer” and design it as a full Data Intelligence / Auto-EDA / AutoML platform.
+Here is the expanded feature map I recommend.
+DataNova 2.0 — Advanced Feature Map
+1. Support More Than CSV
+Currently:
+CSV
+Add:
+CSV
+Excel (.xlsx / .xls)
+JSON
+Parquet
+TSV
+TXT
+SQLite database
+SQL database
+Future connector architecture:
+Data Sources
+     │
+     ├── CSV
+     ├── Excel
+     ├── JSON
+     ├── Parquet
+     ├── SQLite
+     ├── MySQL
+     └── PostgreSQL
+             │
+             ▼
+      Universal Ingestion
+             │
+             ▼
+       DataNova Engine
+This would make the platform much more universal.
+
+2. Dataset Workspace
+Instead of processing one file and forgetting it, create a proper workspace.
+MY WORKSPACE
+
+Datasets
+
+┌─────────────────────────────────┐
+│ sales_2026.csv                  │
+│ 64,382 rows · 28 columns        │
+│ Quality 97.4%                   │
+│ Updated 2 min ago               │
+│                                 │
+│ [ Open ] [ ⋮ ]                  │
+└─────────────────────────────────┘
+Features:
+Save datasets
+Rename datasets
+Duplicate dataset
+Delete dataset
+Dataset versions
+Dataset history
+Re-run analysis
+Compare datasets
+
+3. Dataset Versioning
+Very useful.
+Suppose:
+sales.csv
+changes every week.
+DataNova could maintain:
+sales.csv
+
+v1
+v2
+v3
+v4
+Then:
+VERSION COMPARISON
+
+                  v3        v4       Change
+
+Rows              58,201    64,382    +10.6%
+
+Missing           3.1%      2.3%      ↓
+
+Revenue Mean      ₹491      ₹523      +6.5%
+
+Quality           94.2%     97.4%     +3.2%
+
+4. Dataset Comparison
+This could become a powerful feature.
+Upload:
+Dataset A
+Dataset B
+Then:
+COMPARE DATASETS
+
+Rows
+
+A   █████████████
+B   ████████████████
+
+Columns
+
+Added:
++ Customer Segment
++ Region
+
+Removed:
+- Legacy ID
+
+Changed:
+Revenue
+float → integer
+Also compare:
+distributions
+missing values
+averages
+categories
+correlations
+schema
+anomalies
+
+5. Automatic Data Dictionary
+Generate a professional data dictionary automatically.
+DATA DICTIONARY
+
+Revenue
+
+Type:
+Numerical
+
+Semantic Type:
+Currency
+
+Missing:
+1.2%
+
+Unique:
+58,291
+
+Mean:
+₹523.21
+
+Median:
+₹490.00
+
+Range:
+₹10 – ₹2,400
+
+Description:
+Estimated monetary value generated
+by the transaction.
+The system can infer semantic types such as:
+Age
+Email
+Phone
+Currency
+Percentage
+Date
+Time
+Country
+City
+Postal Code
+ID
+URL
+Boolean
+
+6. Semantic Column Detection
+This is a major upgrade.
+Instead of only seeing:
+revenue
+age
+qty
+dob
+DataNova interprets:
+revenue → Currency
+age     → Person Age
+qty     → Quantity
+dob     → Date of Birth
+This enables smarter analysis automatically.
+
+7. Automatic EDA
+Instead of making users choose everything manually:
+AUTO EDA
+DataNova should automatically determine:
+Numerical
+distributions
+skewness
+kurtosis
+outliers
+correlations
+Categorical
+cardinality
+dominant categories
+imbalance
+rare categories
+Dates
+trends
+seasonality
+growth
+peaks
+declines
+Relationships
+strongest correlations
+possible interactions
+unusual associations
+
+8. Smart Chart Recommendation
+This would be excellent.
+DataNova automatically recommends the correct visualization.
+For example:
+Revenue + Date
+
+Recommended:
+✓ Line Chart
+
+Revenue + Category
+
+Recommended:
+✓ Bar Chart
+
+Age + Revenue
+
+Recommended:
+✓ Scatter Plot
+
+Category + Category
+
+Recommended:
+✓ Heatmap
+
+Numerical distribution
+
+Recommended:
+✓ Histogram + Box Plot
+UI:
+RECOMMENDED VISUALIZATIONS
+
+✦ Revenue Trend
+   Line chart
+
+✦ Revenue by Category
+   Bar chart
+
+✦ Revenue vs Quantity
+   Scatter plot
+
+[ Generate All ]
+
+9. Interactive Dashboard Builder
+Let users create their own dashboard.
+DASHBOARD BUILDER
+
++ Add Chart
++ Add KPI
++ Add Table
++ Add Filter
++ Add Text
+Drag-and-drop:
+┌──────────────┬──────────────┐
+│ Revenue KPI  │ Orders KPI   │
+├──────────────┴──────────────┤
+│                              │
+│       Revenue Trend          │
+│                              │
+├──────────────┬───────────────┤
+│ Category     │ Region        │
+│ Distribution │ Distribution  │
+└──────────────┴───────────────┘
+Then:
+[ Save Dashboard ]
+[ Share ]
+[ Export PDF ]
+
+10. Dashboard Filters
+Global filters:
+Date
+Category
+Region
+Customer
+Product
+Changing a filter updates:
+KPIs
+Charts
+Tables
+Findings
+Statistics
+
+11. Natural Language Data Analysis
+Go much further than:
+“Which variables are correlated?”
+Allow:
+Show me monthly revenue.
+
+Which category generated the most revenue?
+
+Why did revenue decline?
+
+Show top 10 customers.
+
+Compare 2025 vs 2026.
+
+Find unusual transactions.
+
+What are the biggest data-quality problems?
+
+Build a dashboard for this dataset.
+The backend translates the question into analysis operations.
+
+12. AI Data Analyst
+A dedicated AI analyst workspace:
+┌──────────────────────────────────────────────┐
+│ ✦ DATANOVA ANALYST                          │
+│                                              │
+│ I analyzed your dataset.                    │
+│                                              │
+│ I found 7 important patterns:               │
+│                                              │
+│ 1. Revenue is strongly associated with...   │
+│ 2. Category X contributes...                │
+│ 3. 427 potential outliers exist...          │
+│ 4. Revenue increased during...              │
+│                                              │
+│ Ask me anything about your data.             │
+│                                              │
+│ [ Ask a question...                    ]     │
+└──────────────────────────────────────────────┘
+
+13. Explainable AI
+For every ML result:
+WHY DID THE MODEL PREDICT THIS?
+
+Prediction:
+₹842
+
+Main factors:
+
+Quantity       +₹192
+Category       +₹104
+Age            +₹38
+Region         -₹21
+This can use:
+permutation importance
+SHAP later
+partial dependence
+feature contribution
+
+14. AutoML
+Add an AutoML mode.
+User selects:
+Target:
+
+[ Revenue ▼ ]
+
+[ AutoML ]
+DataNova automatically tests:
+Linear Regression
+Random Forest
+Gradient Boosting
+Extra Trees
+Random Forest
+Then produces a comparison:
+MODEL COMPARISON
+
+Model                R²       RMSE
+
+Random Forest        0.87     118
+Gradient Boosting    0.89     111
+Extra Trees          0.86     121
+Linear Regression    0.71     164
+The UI should present the metrics without turning them into a subjective “best model” verdict unless the user explicitly defines the metric/objective.
+
+15. Data Leakage Detection
+Very valuable for ML.
+Detect:
+Potential target leakage
+
+Column:
+Final Amount
+
+Target:
+Revenue
+
+Correlation:
+0.99
+Show:
+⚠ Potential leakage
+
+This feature may contain information
+derived from the target.
+
+16. Feature Engineering
+Automatically create optional features:
+Date
+ ↓
+Year
+Month
+Quarter
+Day
+Day of Week
+Weekend
+
+Revenue + Quantity
+ ↓
+Average Order Value
+
+DOB
+ ↓
+Age
+UI:
+FEATURE ENGINEERING
+
+Suggested transformations
+
+✓ Extract month from Order Date
+✓ Calculate Revenue / Quantity
+✓ Encode Category
+
+[ Preview ]
+[ Apply ]
+
+17. Data Cleaning Suggestions
+Instead of only manual cleaning:
+SMART CLEANING
+
+DataNova detected:
+
+⚠ 1,231 missing values
+⚠ 183 duplicates
+⚠ 427 outliers
+⚠ 3 inconsistent category labels
+
+Recommended actions:
+
+[ Review Recommendations ]
+Example:
+"Ahmedabad"
+"Ahmedabad "
+"ahmedabad"
+"AHMEDABAD"
+DataNova detects:
+Possible duplicate categories
+
+→ Ahmedabad
+
+18. Data Validation Rules
+Allow users to define rules.
+VALIDATION RULES
+
+Age
+
+Must be:
+18 ≤ Age ≤ 100
+
+Revenue
+
+Must be:
+Revenue >= 0
+
+Email
+
+Must match email format
+
+Date
+
+Must not be future
+Result:
+VALIDATION
+
+✓ 63,921 valid records
+⚠ 461 invalid records
+
+19. Data Quality Monitoring
+This turns the product into a monitoring system.
+DATA QUALITY MONITOR
+
+Quality Score
+
+Today       97.4%
+Yesterday   97.9%
+Last Week   98.2%
+
+Trend
+████████████╲
+             ╲
+Alert:
+⚠ Quality degradation
+
+Missing values increased
+from 1.2% → 2.8%
+
+20. Anomaly Monitoring
+Automatically track anomalies over time.
+ANOMALY MONITOR
+
+Normal              98.7%
+Potential anomalies  1.3%
+
+Detected:
+427 transactions
+
+21. Data Drift Detection
+For datasets arriving periodically:
+DATA DRIFT
+
+Feature             Drift
+
+Age                 2.1%
+Revenue             14.7% ⚠
+Quantity            3.4%
+Category            18.2% ⚠
+This is especially useful if you later make the platform suitable for production ML.
+
+22. Time-Series Forecasting
+Add:
+FORECASTING
+For example:
+Historical Revenue
+
+2025 ──────────── 2026
+       ↗↗↗↗↗
+
+Forecast
+
+Oct ─────── ₹82K
+Nov ─────── ₹86K
+Dec ─────── ₹94K
+Possible models:
+moving average
+exponential smoothing
+ARIMA
+seasonal decomposition
+
+23. Cohort Analysis
+For customer datasets:
+COHORT ANALYSIS
+
+           Month 0  Month 1  Month 2  Month 3
+
+Jan 2026      100%     72%      51%      39%
+Feb 2026      100%     69%      48%
+Mar 2026      100%     75%
+
+24. RFM Analysis
+For sales/customer datasets:
+RFM ANALYSIS
+
+Recency
+Frequency
+Monetary
+Customer segmentation:
+Champions
+Loyal Customers
+Potential Loyalists
+At Risk
+Lost Customers
+
+25. Geographic Analysis
+If the CSV contains:
+Country
+State
+City
+Latitude
+Longitude
+Automatically enable:
+GEOGRAPHIC ANALYSIS
+with:
+country map
+state map
+city distribution
+regional revenue
+geographic clusters
+
+26. Privacy / Security Layer
+For a serious application, add:
+SECURITY
+
+✓ File validation
+✓ File size limits
+✓ Secure temporary storage
+✓ Dataset isolation
+✓ Input sanitization
+✓ No arbitrary code execution
+✓ API authentication
+✓ Rate limiting
+Also detect sensitive fields:
+Potential sensitive columns
+
+Email
+Phone
+Address
+Government ID
+And warn the user before exporting/sharing.
+
+27. Audit Log
+Every action should be recorded:
+ACTIVITY LOG
+
+12:43  Dataset uploaded
+12:43  Schema detected
+12:44  Analysis completed
+12:45  Missing values filled
+12:46  Regression model trained
+12:47  PDF generated
+
+28. Analysis History
+ANALYSIS HISTORY
+
+Today
+
+sales_2026.csv
+Full Analysis
+12:43 PM
+
+sales_2026_cleaned.csv
+Cleaning
+12:46 PM
+
+sales_2026_model
+Regression
+12:51 PM
+
+29. Shareable Analysis
+Generate:
+Share Analysis
+
+https://datanova.local/share/abc123
+With permissions:
+View only
+Can download
+Can edit
+
+30. Presentation Mode
+This would be a great premium feature.
+PRESENTATION MODE
+Turns analysis into:
+Slide 1
+Dataset Overview
+
+Slide 2
+Data Quality
+
+Slide 3
+Key Findings
+
+Slide 4
+Revenue Trends
+
+Slide 5
+Machine Learning
+
+Slide 6
+Recommendations / Next Questions
+
+31. Executive Summary Generator
+At the top:
+EXECUTIVE SUMMARY
+
+DataNova analyzed 64,382 records across
+28 columns.
+
+Three major observations were detected:
+
+01
+Revenue and Quantity show a strong
+positive association.
+
+02
+427 potential outliers were detected.
+
+03
+The dataset contains 1,231 missing cells.
+
+[ Read Full Analysis ]
+
+32. Data Storytelling
+Instead of just charts:
+DATA STORY
+
+Revenue increased steadily from January
+through August.
+
+The strongest growth occurred in the
+Electronics category.
+
+However, several unusually high-value
+transactions affect the distribution.
+Then each statement links to its visualization.
+
+33. Notebook Mode
+Add a Jupyter-like experience:
+ANALYSIS NOTEBOOK
+
+[ Markdown ]
+
+Revenue has increased significantly.
+
+[ Chart ]
+
+Revenue Trend
+
+[ Python Analysis ]
+
+df.groupby("category")["revenue"].sum()
+
+[ Result ]
+
+...
+This would be particularly useful for students, analysts and developers.
+
+34. Python Code Generator
+For every analysis:
+HOW WAS THIS CALCULATED?
+
+[ View Python ]
+
+import pandas as pd
+
+df.groupby("category")["revenue"].sum()
+Then:
+[ Copy Code ]
+[ Download Notebook ]
+This makes the platform educational and reproducible.
+
+35. SQL Generator
+If database support is added:
+NATURAL LANGUAGE
+
+"Show monthly revenue by category"
+
+↓
+
+SELECT
+    DATE_TRUNC('month', date),
+    category,
+    SUM(revenue)
+FROM sales
+GROUP BY 1,2;
+
+36. Export Everything
+One button:
+EXPORT COMPLETE ANALYSIS
+
+☑ Cleaned Dataset
+☑ Data Profile
+☑ Statistics
+☑ Charts
+☑ Findings
+☑ ML Results
+☑ AI Investigation
+☑ Python Code
+
+[ Generate Complete Package ]
+Generate:
+DataNova_Analysis.zip
+│
+├── cleaned_dataset.csv
+├── analysis_report.pdf
+├── statistics.xlsx
+├── profile.json
+├── charts/
+├── python/
+└── analysis_notebook.ipynb
+
+37. Theme System
+Your current dark UI can have:
+Dark
+Light
+Midnight
+High Contrast
+But I would keep Dark DataNova as the default.
+
+38. Command Palette
+Very useful for a professional application:
+Ctrl + K
+
+Search commands...
+
+> Upload dataset
+> Open overview
+> Run analysis
+> Clean dataset
+> Find correlations
+> Train model
+> Ask AI
+> Generate report
+> Export CSV
+This makes the application feel much more like a serious desktop/SaaS tool.
+
+39. Keyboard Shortcuts
+Ctrl + K     Command palette
+Ctrl + U     Upload
+Ctrl + E     EDA
+Ctrl + M     Machine Learning
+Ctrl + I     AI Investigation
+Ctrl + R     Reports
+
+40. The Big Upgrade: DataNova Agent
+Eventually the entire product could revolve around:
+                 DATANOVA AGENT
+                       │
+          ┌────────────┼────────────┐
+          ▼            ▼            ▼
+       Profile       Analyze       ML
+          │            │            │
+          └────────────┼────────────┘
+                       ▼
+                   Explain
+                       │
+                       ▼
+                   Report
+User says:
+Analyze this dataset completely.
+The system automatically:
+1. Detect file format
+2. Inspect schema
+3. Detect semantic types
+4. Check data quality
+5. Clean/offer cleaning
+6. Run EDA
+7. Find relationships
+8. Detect anomalies
+9. Analyze trends
+10. Run appropriate statistical tests
+11. Detect ML opportunities
+12. Train relevant models when appropriate
+13. Generate findings
+14. Generate executive summary
+15. Build dashboard
+16. Generate report
+That is the direction I'd take this project.
+Final product vision
+Instead of:
+CSV → Charts
+build:
+                 ┌─────────────────────┐
+                 │      ANY DATA        │
+                 │ CSV Excel JSON SQL   │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │ UNIVERSAL INGESTION │
+                 └──────────┬──────────┘
+                            ↓
+                 ┌─────────────────────┐
+                 │ DATA UNDERSTANDING  │
+                 │ Schema + Semantics  │
+                 └──────────┬──────────┘
+                            ↓
+        ┌───────────────────┼───────────────────┐
+        ↓                   ↓                   ↓
+   DATA QUALITY          AUTO EDA             ML
+        ↓                   ↓                   ↓
+   CLEANING            STATISTICS          PREDICTION
+        ↓                   ↓                   ↓
+        └───────────────────┼───────────────────┘
+                            ↓
+                  ┌──────────────────┐
+                  │ AI INVESTIGATION │
+                  └────────┬─────────┘
+                           ↓
+                  ┌──────────────────┐
+                  │ FINDINGS & STORY │
+                  └────────┬─────────┘
+                           ↓
+                  ┌──────────────────┐
+                  │ DASHBOARD        │
+                  │ REPORTS          │
+                  │ EXPORTS          │
+                  └──────────────────┘
+Absolutely. For DataNova, I would make visualization a complete visualization engine rather than limiting it to basic bar/line/pie charts.
+The important design principle is: the application should automatically select appropriate visualizations based on column types, cardinality, distributions, and the analysis objective, while also allowing the user to manually choose a chart.
+DataNova — Complete Visualization Library
+1. KPI / Summary Visualizations
+These are not technically charts, but they are essential for an analytics dashboard.
+Example:
+┌─────────────────────┐
+│ TOTAL REVENUE       │
+│ ₹8.42M              │
+│ ↑ 14.8%             │
+└─────────────────────┘
+
+2. Basic Comparison Charts
+Bar Chart
+Category A █████████████
+Category B █████████
+Category C ██████
+Variants:
+Vertical bar
+Horizontal bar
+Grouped bar
+Stacked bar
+100% stacked bar
+Diverging bar
+Floating bar
+Use for:
+Category comparison
+Ranking
+Group comparison
+
+Column Chart
+Vertical version of the bar chart.
+Variants:
+Grouped column
+Stacked column
+100% stacked column
+
+Lollipop Chart
+A ─────────●
+B ───────●
+C ─────●
+D ───●
+Excellent for rankings with many categories.
+
+Dot Plot
+A ─────────●
+B ───────●
+C ───●
+Useful for compact category comparisons.
+
+3. Time-Series Visualizations
+Line Chart
+Revenue
+│           ╱╲
+│       ╱──╯  ╲──╮
+│   ╱──╯         ╰──
+└──────────────────── Date
+Variants:
+Single line
+Multi-line
+Smooth line
+Step line
+Area line
+Dashed comparison line
+
+Area Chart
+       ╱╲
+      ╱  ╲
+  ___╱    ╲____
+Variants:
+Basic area
+Stacked area
+100% stacked area
+
+Streamgraph
+Excellent for showing changing category composition over time.
+
+Calendar Heatmap
+MON  ░ ▓ █ ▓
+TUE  ▓ █ █ ░
+WED  ░ ▓ ▓ █
+Useful for:
+Daily sales
+Website traffic
+Activity
+Transactions
+
+Timeline
+Useful for:
+Events
+Milestones
+Transactions
+Project activity
+
+4. Distribution Visualizations
+Histogram
+       ███
+     ███████
+   ███████████
+ ███████████████
+────────────────────
+Use for numerical distributions.
+
+Density Plot / KDE
+Shows the estimated probability density.
+
+Box Plot
+─────┬────[────]────┬────
+    min   Q1 median Q3   max
+Shows:
+Minimum
+Q1
+Median
+Q3
+Maximum
+Outliers
+
+Violin Plot
+Combines:
+Distribution
+Density
+Median
+Quartiles
+Excellent for comparing distributions across categories.
+
+Boxen Plot
+Useful for large datasets and detailed distribution analysis.
+
+ECDF
+Empirical cumulative distribution function.
+Useful for comparing distributions without binning.
+
+Ridgeline Plot
+Multiple distributions stacked vertically.
+Excellent for:
+Revenue by Month
+Age by Region
+Salary by Department
+
+Strip Plot
+Shows individual observations.
+
+Swarm Plot
+Shows individual observations while reducing overlap.
+
+5. Relationship Visualizations
+Scatter Plot
+Revenue
+│       •
+│   •      •
+│      •
+│ •         •
+└──────────────── Quantity
+Use for two numerical variables.
+
+Bubble Chart
+Scatter plot where:
+X = Revenue
+Y = Quantity
+Size = Profit
+Color = Category
+Can encode four dimensions.
+
+Hexbin Plot
+Excellent for very large datasets.
+Instead of displaying thousands of points, it aggregates points into hexagonal bins.
+
+2D Density Plot
+Shows concentration of observations.
+
+Contour Plot
+Useful for:
+Density
+Mathematical surfaces
+Optimization
+
+Pair Plot
+Automatically plots every numerical variable against every other numerical variable.
+Very useful for exploratory analysis.
+
+Scatter Matrix
+Similar to pair plot but presented as a matrix.
+
+6. Correlation Visualizations
+Correlation Matrix
+          Revenue Quantity Age
+Revenue     1.00    .82    .21
+Quantity    .82    1.00    .14
+Age         .21    .14   1.00
+
+Correlation Heatmap
+        Revenue Quantity Age
+Revenue   ████    ████   ░░
+Quantity  ████    ████   ░
+Age       ░░      ░       ████
+Support:
+Pearson
+Spearman
+Kendall
+
+Clustered Correlation Heatmap
+Automatically groups highly related variables.
+
+Correlogram
+Visualizes:
+correlation
+scatter
+distributions
+in one matrix.
+
+7. Categorical Visualizations
+Pie Chart
+Useful for a small number of categories.
+
+Donut Chart
+Same concept with a center area.
+
+Treemap
+Excellent for hierarchical categorical data.
+┌──────────────────────────┐
+│ Electronics              │
+│                          │
+│ ┌────────────┐ ┌───────┐ │
+│ │ Phones     │ │Laptop │ │
+│ │            │ │       │ │
+│ └────────────┘ └───────┘ │
+└──────────────────────────┘
+
+Sunburst Chart
+Hierarchical categories represented as concentric rings.
+
+Icicle Chart
+Another hierarchical visualization.
+
+Waffle Chart
+Useful for simple percentage compositions.
+
+Pareto Chart
+Combines:
+Bars + cumulative percentage line
+Excellent for identifying the categories contributing most to a total.
+
+8. Heatmaps
+Standard Heatmap
+Excellent for matrix relationships.
+
+Calendar Heatmap
+Time-based heatmap.
+
+Correlation Heatmap
+Variable relationships.
+
+Pivot Heatmap
+Example:
+             Mon Tue Wed Thu Fri
+Ahmedabad     █   ███ ██  █   █
+Mumbai        ██  █   ███ █   ██
+Delhi         ███ ██  █   ██  ███
+
+Density Heatmap
+Shows spatial or numerical concentration.
+
+9. Geographic Visualizations
+If location data exists, DataNova should automatically unlock these.
+Point Map
+       ●
+  ●         ●
+      ●
+           ●
+
+Bubble Map
+Bubble size represents a metric.
+
+Choropleth Map
+Color geographic regions based on a value.
+Example:
+State → Revenue
+
+Density Map
+Shows concentration of points.
+
+Hexbin Map
+Aggregates geographic points into hexagons.
+
+Flow Map
+Shows movement:
+Ahmedabad ─────────→ Mumbai
+Delhi     ─────→ Jaipur
+
+Route Map
+Useful for logistics and transportation.
+
+Geographic Cluster Map
+Automatically groups nearby points.
+
+10. Hierarchical Visualizations
+Treemap
+Parent → child relationships.
+
+Sunburst
+Hierarchical proportions.
+
+Icicle
+Hierarchical depth.
+
+Dendrogram
+Shows hierarchical clustering.
+        ┌──────── A
+    ┌───┤
+    │   └──────── B
+────┤
+    │   ┌──────── C
+    └───┤
+        └──────── D
+
+11. Statistical Visualizations
+Q-Q Plot
+Used to check whether a distribution approximately follows a theoretical distribution.
+
+P-P Plot
+Probability comparison.
+
+Confidence Interval Plot
+Group A ─────●──────
+Group B ───●────────
+Group C ───────●────
+
+Error Bar Chart
+Shows:
+Mean
+Standard error
+Confidence interval
+
+Mean + CI Plot
+Useful for statistical comparisons.
+
+Residual Plot
+For regression diagnostics.
+
+Residual Distribution
+Shows model errors.
+
+Prediction vs Actual
+Actual
+│      /
+│    /
+│  /
+│ /  predictions
+└──────────────
+
+12. Machine Learning Visualizations
+Feature Importance
+Quantity    █████████████████
+Revenue     █████████████
+Age         ███████
+Region      ████
+
+Confusion Matrix
+              Predicted
+             A    B    C
+Actual A    421  12   4
+       B     18  389  7
+       C      5   9  402
+
+ROC Curve
+TPR
+│        ╭────
+│      ╭╯
+│    ╭╯
+│  ╭╯
+│╭╯
+└──────────── FPR
+
+Precision-Recall Curve
+Useful especially for imbalanced classification.
+
+Lift Curve
+Useful for classification/ranking problems.
+
+Gain Chart
+Useful for marketing/customer analytics.
+
+Learning Curve
+Score
+│       ─────────
+│    ──
+│ ──
+└──────────────── Training Size
+
+Validation Curve
+Shows model performance against a hyperparameter.
+
+Residual Plot
+For regression.
+
+Actual vs Predicted
+For regression.
+
+Feature Contribution Plot
+Explains individual predictions.
+
+SHAP Summary Plot
+Advanced model explainability.
+
+Partial Dependence Plot
+Shows how a feature affects predictions.
+
+ICE Plot
+Individual Conditional Expectation.
+
+13. Clustering Visualizations
+Cluster Scatter Plot
+● ● ●       ▲ ▲
+ ● ●       ▲ ▲ ▲
+
+        ■ ■
+       ■ ■ ■
+
+Elbow Curve
+Used to inspect K-Means cluster counts.
+
+Silhouette Plot
+Shows cluster separation.
+
+PCA 2D Plot
+Projects high-dimensional data into two dimensions.
+
+PCA 3D Plot
+Same concept in three dimensions.
+
+t-SNE Plot
+Useful for nonlinear dimensionality reduction visualization.
+
+UMAP Plot
+Another dimensionality reduction visualization.
+
+14. 3D Visualizations
+Since you have previously wanted 3D graphs, DataNova can support them too.
+3D Scatter
+X = Age
+Y = Revenue
+Z = Quantity
+
+3D Surface
+Useful for continuous mathematical relationships.
+
+3D Mesh
+Useful for spatial/scientific datasets.
+
+3D Line
+Useful for trajectories and time-dependent data.
+
+3D Bubble
+Three coordinates + bubble size.
+
+15. Financial / Business Visualizations
+For financial or sales CSV files:
+Waterfall Chart
+Revenue
+   │
+   ├── + Sales
+   ├── + Growth
+   ├── - Returns
+   ├── - Expenses
+   ↓
+Profit
+
+Funnel Chart
+Visitors       ███████████████████
+Leads          █████████████
+Customers      ████████
+Purchases      ████
+Useful for:
+Sales funnels
+Marketing
+Recruitment
+Conversion
+
+Gauge
+Useful for:
+KPI
+Target achievement
+Quality score
+
+Bullet Chart
+Better than a gauge for many business dashboards.
+
+Pareto Analysis
+Useful for:
+Product defects
+Revenue concentration
+Customer problems
+Operational issues
+
+16. Network Visualizations
+For relational datasets:
+Network Graph
+       ●
+      / \
+     ●───●
+      \ /
+       ●
+
+Force-Directed Graph
+Nodes and relationships.
+
+Sankey Diagram
+Excellent for flow analysis.
+Source          Destination
+
+        ┌──────→ Product A
+India ──┤
+        └──────→ Product B
+
+USA ───────────→ Product C
+
+Chord Diagram
+Useful for relationships between groups.
+
+17. Flow Visualizations
+Sankey
+For:
+Customer journeys
+Money flow
+Supply chain
+Traffic flow
+
+Funnel
+For conversion pipelines.
+
+Alluvial Diagram
+Shows categorical changes across stages/time.
+
+18. Text Analytics Visualizations
+If the CSV contains text:
+Word Cloud
+     DATA
+  ANALYSIS
+       PYTHON
+ MACHINE
+     LEARNING
+
+Term Frequency Chart
+Top words.
+
+N-Gram Chart
+Top:
+Unigrams
+Bigrams
+Trigrams
+
+Sentiment Distribution
+Positive   ███████████
+Neutral    ███████
+Negative   ███
+
+Sentiment Timeline
+Sentiment over time.
+
+Topic Distribution
+Shows discovered topics.
+
+19. Missing-Data Visualizations
+Very important for your application.
+Missing Values Bar
+Email       █████████
+Phone       ███
+Age         █
+Revenue     ░
+
+Missingness Heatmap
+        A B C D E
+Row 1   █ ░ █ █ ░
+Row 2   █ █ █ ░ █
+Row 3   ░ █ █ █ █
+
+Missingness Matrix
+Shows patterns of missing values.
+
+Missingness by Column
+Percentage missing per column.
+
+20. Data Quality Visualizations
+Quality Score Gauge
+         97.4%
+      ┌────────┐
+      │  GOOD  │
+      └────────┘
+
+Quality Trend
+100 ─────────╮
+             ╰───
+ 95
+
+Error Distribution
+Shows:
+invalid values
+duplicates
+missing values
+outliers
+
+21. Outlier Visualizations
+Support multiple techniques:
+Box Plot
+Scatter Outliers
+IQR Visualization
+Z-score Visualization
+Isolation Forest
+Local Outlier Factor
+DBSCAN Anomalies
+Example:
+Normal:
+
+● ● ● ● ● ● ● ●
+
+Outliers:
+
+                         ✦
+
+22. Advanced Time-Series Visualizations
+Add:
+Moving Average
+Actual ─────╱╲╱╲╱╲────
+Average ────╱────╲────
+Rolling Statistics
+Rolling mean
+Rolling median
+Rolling standard deviation
+Seasonal Decomposition
+Observed
+Trend
+Seasonality
+Residual
+Forecast + Confidence Interval
+Historical     Forecast
+
+──────────╱╱╱──────────
+             ╱
+           ╱   ┊
+         ╱     ┊ confidence
+
+23. Specialized Visualizations
+For advanced datasets:
+
+24. Automatic Visualization Recommendation Engine
+This is the part I'd particularly add to your Python backend.
+Instead of showing every chart, DataNova calculates:
+Dataset
+   ↓
+Column Detection
+   ↓
+Semantic Detection
+   ↓
+Cardinality
+   ↓
+Distribution
+   ↓
+Relationship
+   ↓
+Analysis Objective
+   ↓
+Visualization Recommendation
+Example:
+Revenue
+Type: Numerical
+
+Category
+Type: Categorical
+
+Date
+Type: Datetime
+DataNova automatically creates:
+✦ Revenue Distribution
+   Histogram
+
+✦ Revenue by Category
+   Bar Chart
+
+✦ Revenue Over Time
+   Line Chart
+
+✦ Revenue vs Quantity
+   Scatter Plot
+
+✦ Revenue by Category Over Time
+   Stacked Area Chart
+
+25. Visualization Recommendation Rules
+For example:
+
+26. Visualization Gallery UI
+I would add a dedicated page:
+VISUALIZATION STUDIO
+
+┌─────────────────────────────────────────────────────────┐
+│ Search visualizations...                    🔍          │
+└─────────────────────────────────────────────────────────┘
+
+RECOMMENDED
+
+┌────────────┐ ┌────────────┐ ┌────────────┐
+│ Histogram  │ │ Bar Chart  │ │ Line Chart │
+│     ▂██    │ │ ███ ███    │ │   ╱╲       │
+│            │ │ ███ ███    │ │ ╱  ╲╱╲     │
+└────────────┘ └────────────┘ └────────────┘
+
+COMPARISON
+
+[ Bar ] [ Column ] [ Lollipop ] [ Dot ]
+
+DISTRIBUTION
+
+[ Histogram ] [ Box ] [ Violin ] [ KDE ]
+
+RELATIONSHIP
+
+[ Scatter ] [ Bubble ] [ Hexbin ] [ Contour ]
+
+TIME SERIES
+
+[ Line ] [ Area ] [ Calendar ] [ Streamgraph ]
+
+GEOGRAPHIC
+
+[ Map ] [ Choropleth ] [ Bubble Map ]
+
+STATISTICAL
+
+[ Q-Q ] [ CI ] [ Error Bar ] [ Residual ]
+
+MACHINE LEARNING
+
+[ ROC ] [ PR ] [ Confusion Matrix ]
+[ Feature Importance ] [ SHAP ]
+
+ADVANCED
+
+[ Sankey ] [ Treemap ] [ Sunburst ]
+[ Radar ] [ Parallel Coordinates ]
+
+27. Manual Chart Builder
+The user should also be able to create any supported chart manually.
+CREATE VISUALIZATION
+
+Chart Type
+
+[ Scatter Plot ▼ ]
+
+X Axis
+
+[ Revenue ▼ ]
+
+Y Axis
+
+[ Quantity ▼ ]
+
+Color
+
+[ Category ▼ ]
+
+Size
+
+[ Profit ▼ ]
+
+Facet
+
+[ Region ▼ ]
+
+Aggregation
+
+[ Average ▼ ]
+
+────────────────────
+
+[ Preview ]
+
+[ Add to Dashboard ]
+[ Export PNG ]
+[ Export SVG ]
+
+28. Visualization Actions
+Every chart should have:
+⋮
+├── View Fullscreen
+├── Change Chart
+├── Edit
+├── Duplicate
+├── Download PNG
+├── Download SVG
+├── Download HTML
+├── View Data
+├── View Python Code
+├── Add to Dashboard
+└── Remove
+
+29. Complete Visualization Count
+If we implement the entire library, DataNova can support roughly:
+CATEGORY                         TYPES
+
+KPI / Summary                     10+
+Comparison                        10+
+Time Series                       10+
+Distribution                      10+
+Relationship                      10+
+Correlation                        5+
+Categorical                       10+
+Heatmaps                           5+
+Geographic                        10+
+Hierarchy                          6+
+Statistics                         8+
+Machine Learning                  15+
+Clustering                         8+
+3D                                 6+
+Financial / Business              10+
+Network                             5+
+Flow                                5+
+Text Analytics                     8+
+Missing Data                       5+
+Outliers                            7+
+Advanced Time Series               10+
+Specialized                        15+
+So the platform could have well over 150 visualization variants, while the recommendation engine would only surface the charts that actually make sense for a particular dataset.
+Recommended technology
+For your React + Python architecture, I'd make the visualization layer:
+Python
+│
+├── Pandas
+├── NumPy
+├── SciPy
+├── Scikit-learn
+│
+└── Visualization Engine
+      │
+      ├── Plotly
+      ├── Matplotlib
+      └── Seaborn
+             │
+             ▼
+        JSON / Plotly Spec
+             │
+             ▼
+React Frontend
+│
+└── Plotly.js
+For the interactive application, Plotly should be the primary visualization engine because it gives you interactive hover, zoom, filtering, legends, 2D/3D charts, maps, statistical charts, and export capabilities while fitting naturally into your React frontend.
+
+
+--- TABLE 1 ---
+Metric | Result
+Rows | 10,000
+Columns | 15
+Numerical | 8
+Categorical | 5
+Date columns | 2
+Missing values | 1.8%
+Duplicate rows | 24
+Data quality | 96.4%
+
+--- TABLE 2 ---
+React Page | Python API
+Upload | /api/upload
+Overview | /api/dataset/{id}
+Data Profile | /api/dataset/{id}/profile
+Findings | /api/dataset/{id}/insights
+Quality | /api/dataset/{id}/profile
+Statistics | /api/dataset/{id}/statistics
+Correlation | /api/dataset/{id}/correlations
+Outliers | /api/dataset/{id}/outliers
+Charts | /api/dataset/{id}/charts
+Hypothesis | /api/dataset/{id}/compare
+Chi-square | /api/dataset/{id}/chi-square
+Regression | /api/dataset/{id}/ml/regression
+Classification | /api/dataset/{id}/ml/classification
+Clustering | /api/dataset/{id}/ml/clustering
+AI Investigation | /api/dataset/{id}/query
+CSV | /api/dataset/{id}/csv
+PDF | /api/dataset/{id}/pdf
+JSON | /api/dataset/{id}/json
+
+--- TABLE 3 ---
+Visualization | Use
+KPI Card | Single important metric
+KPI with Trend | Metric + change over time
+KPI with Sparkline | Compact historical trend
+Metric Comparison | Compare two metrics
+Goal / Target Card | Actual vs target
+Progress Bar | Percentage completion
+Gauge | Score / percentage
+Radial Progress | Completion / quality
+Bullet Chart | Actual vs target
+Big Number | Executive summary metric
+
+--- TABLE 4 ---
+Visualization | Purpose
+Radar Chart | Multi-dimensional comparison
+Polar Chart | Circular measurements
+Rose Chart | Directional distributions
+Wind Rose | Wind/directional data
+Parallel Coordinates | High-dimensional data
+Andrews Curves | Multivariate comparison
+Bump Chart | Ranking changes
+Slope Chart | Before/after comparison
+Marimekko | Two-dimensional proportions
+Mosaic Plot | Categorical relationships
+Ternary Plot | Three-part composition
+Violin | Distribution comparison
+Ridgeline | Multiple distributions
+Hexbin | Dense scatter data
+Voronoi | Spatial partitioning
+Contour | Density/surface
+Surface | 3D continuous data
+
+--- TABLE 5 ---
+Data | Automatically suggest
+Numerical | Histogram
+Numerical + Numerical | Scatter
+Numerical + Category | Box / Violin / Bar
+Category | Bar
+Category + Category | Heatmap
+Date + Numerical | Line
+Date + Category + Numerical | Stacked Area
+Geographic | Map
+Hierarchical | Treemap
+Two numerical + size | Bubble
+Many numerical columns | Correlation Heatmap
+ML classification | Confusion Matrix
+ML regression | Actual vs Predicted
+ML clustering | Cluster Scatter
+Text | Word Cloud
+Missing values | Missingness Heatmap
+Time + forecast | Forecast Chart

@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+numpy
+scipy
+scikit-learn
+statsmodels
+plotly
+matplotlib
+seaborn
+openpyxl
+xlsxwriter
+reportlab
+chardet
+python-dateutil
+pydantic
